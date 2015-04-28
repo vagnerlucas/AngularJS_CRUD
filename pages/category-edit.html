@@ -1,0 +1,14 @@
+<div ng-controller="categoryList">
+  <div class="modal-header">
+      <h3>Editar categoria : {{name}}</h3>
+    </div>
+    <form ng-submit="submit(newCategoryName)">
+      <div class="modal-body">
+        <input type="text" id="newCategoryInput" ng-model="newCategoryName" placeholder="Novo nome" auto-focus required>
+      </div>
+      <div class="modal-footer">
+          <input type="button" class="btn primary-btn" ng-click="cancel()" value="Cancelar" />
+          <button class="btn btn-warning" ng-disabled="(newCategoryName.$invalid)">Confirmar</button>
+      </div>
+    </form>
+</div>

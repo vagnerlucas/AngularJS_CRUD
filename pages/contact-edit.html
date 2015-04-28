@@ -1,0 +1,75 @@
+<div ng-controller="contactsList">
+  <div class="modal-header">
+    <h3>Editar contato: {{name}}</h3>
+  </div>
+  <form ng-submit="submit()" class="form-horizontal">
+  <tabset>
+    <tab>
+      <tab-heading>
+        <i class="glyphicon glyphicon-user"></i> Informações básicas
+      </tab-heading>
+      <hr />
+      <table style="border-spacing:15px">
+        <tr>
+          <td>
+            <label for="inputName" class="control-label col-xs-1">Nome</label>
+          </td>
+          <td style="width:80%">
+            <input type="text" class="form-control col-xs-6" placeholder="Nome" ng-model="contact.firstname" auto-focus required>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="inputLastName" class="control-label col-xs-1">Sobrenome</label>
+          </td>
+          <td style="width:80%">
+            <input type="text" class="form-control col-xs-6" id="inputLastName" placeholder="Sobrenome" ng-model="contact.lastname">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="inputHomePhone" class="control-label col-xs-1">Telefone</label>
+          </td>
+          <td style="width:80%">
+            <input type="text" class="form-control bfh-phone" placeholder="Telefone" ng-model="contact.homenumber" numbers-only="numbers-only">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="inputMobilePhone" class="control-label col-xs-1">Celular</label>
+          </td>
+          <td style="width:80%">
+            <input type="text" class="form-control bfh-phone" placeholder="Celular" ng-model="contact.mobilenumber" numbers-only="numbers-only">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="inputEmail" class="control-label col-xs-1">Email</label>
+          </td>
+          <td style="width:80%">
+            <input type="email" class="form-control bfh-phone" placeholder="Email" ng-model="contact.email">
+          </td>
+        </tr>
+      </table>
+    </tab>
+  <tab>
+  <tab-heading>
+      <i class="glyphicon glyphicon-tag"></i> Categorias
+  </tab-heading>
+    <h3>Adicionar categoria a contato</h3>
+    <p ng-repeat="category in categories track by $index">
+    <input type="button" id={{category.name}} class='btn btn-default' ng-click="addCategory(category)" value={{category.name}}></input>
+    </p>
+    <div> <hr />
+    <tt ng-repeat="cat in savedCategories track by $index">
+      <alert type="success" close="removeCategory($index)">{{cat.name}}</alert>
+    </tt>
+    </div>
+  </tab>
+  </tabset>
+  <div class="modal-footer">
+    <input type="button" class="btn primary-btn" ng-click="cancel()" value="Cancelar" />
+    <button class="btn btn-warning">Confirmar</button>
+  </div>
+  </form>
+</div>

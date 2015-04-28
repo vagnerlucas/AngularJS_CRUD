@@ -1,0 +1,12 @@
+<h2>Adicionar categoria</h2>
+<hr />
+<form ng-submit="save()" ng-controller="newCategory" class="form-horizontal">
+	<div class="form-group">
+    	<label for="inputName" class="control-label col-xs-1">Nome</label>
+    	<div class="col-xs-6">
+    		<input type="text" class="form-control" id="inputName" placeholder="Nome" ng-model="categories.name" auto-focus required>
+    	</div>
+    </div>
+  <hr />
+  <input type="submit" id="submit" class="btn btn-primary" value="Salvar"></input>
+  </form>

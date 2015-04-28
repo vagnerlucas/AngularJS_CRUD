@@ -1,0 +1,11 @@
+<div ng-controller="categoryList">
+  <div class="modal-header">
+      <h3>Tem certeza que deseja excluir a categoria: {{name}} ?</h3>
+    </div>
+    <form ng-submit="submit()">
+      <div class="modal-footer">
+          <input type="button" class="btn primary-btn" ng-click="cancel()" value="Não" />
+          <button class="btn btn-warning">Sim</button>
+      </div>
+    </form>
+</div>

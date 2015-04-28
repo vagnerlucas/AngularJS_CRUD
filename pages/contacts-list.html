@@ -1,0 +1,29 @@
+<table class="table table-striped" cellspacing="0" width="100%" ng-controller="contactsList">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Telefone</th>
+                <th>Celular</th>
+                <th>Email</th>
+                <th>Tags</th>
+            </tr>
+            <tr>
+                <input type="text" class="form-control" id="inputName" placeholder="Pesquisar" ng-model="searchName" auto-focus >
+            </tr>
+        </thead>
+
+        <tbody ng-repeat="contact in contacts | filter:searchName">
+            <tr> 
+                <td>
+                <a href="" ng-click="edit($index)"><tt class="glyphicon glyphicon-pencil"></tt></a> 
+                <a href="" ng-click="remove($index)"><tt class="glyphicon glyphicon-remove"></tt></a>
+                {{contact.firstname}}</td>
+                <td>{{contact.lastname}}</td>
+                <td>{{contact.homenumber}}</td>
+                <td>{{contact.mobilenumber}}</td>
+                <td>{{contact.email}}</td>
+                <td><tt ng-repeat="category in contact.categories">{{category.name}} </tt></td>
+            </tr>
+        </tbody>        
+</table>

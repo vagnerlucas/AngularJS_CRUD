@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="main">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Angular JS CRUD - Vagner Lucas</title>
+		<meta name="author" content="Vagner Lucas" />
+		<!-- Date: 2015-03-29 -->
+
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-route.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+
+		<script type="text/javascript" src="js/app/app.js"></script>
+		<script type="text/javascript" src="js/app/contacts.js"></script>
+		<script type="text/javascript" src="js/app/categories.js"></script>
+		<script type="text/javascript" src="js/app/directives.js"></script>
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+	<div class="container">
+      <div class="header clearfix">
+
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#/">Home</a></li>
+            <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Agenda <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#contacts/add">Adicionar contato</a></li>
+	            <li><a href="#contacts/list">Listar contatos</a></li>
+	          </ul>
+            </li>
+            <li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Categorias<span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#categories/add">Criar categoria</a></li>
+	            <li><a href="#categories/list">Listar categorias</a></li>
+	      	  </ul>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">AngularJS CRUD</h3>
+      </div>
+	  <br><br><br>
+	  <div>	
+      	<ng-view></ng-view>
+	  </div>
+
+      <footer class="footer pull-right">
+        <p>Vagner Lucas - <a href="http://github.com/vagnerlucas">github.com/vagnerlucas</a></p>
+      </footer>
+
+      </div> 
+    </div> 
+	</body>
+</html>
+
